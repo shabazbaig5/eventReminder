@@ -53,3 +53,10 @@ body{
     font-size: 40px;
     color: white;
 }
+.centerPaper p{
+    background-color: rgba(0, 0, 0, 0.428);
+    padding : 10px;
+    /* overflow: hidden; */
+    width:30vh;
+    border-radius: 1.5rem;
+}
