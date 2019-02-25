@@ -5,6 +5,12 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous")
+        script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js", integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js", integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49", crossorigin="anonymous")
+        script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js", integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy",crossorigin="anonymous")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js")
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", crossorigin="anonymous")
+
         link(rel="stylesheet", href="/styles/home.css")
         title B'day
     body
@@ -12,10 +18,16 @@ html(lang="en")
     div(class='eventHead')
         h1  Upcoming Events
     - const eventList = events
+    
     div(class='centerPaper wrapper')
+        if(eventList.length === 0)
+            p no events added yet!
         //- div(class='content')
         each val in eventList
-            p=`${val.name} : ${val.event_name}`
+            p(class='eventList')=`${val.name} : ${val.event_name}`
+
+        a(id='scroller' href='#eventForm') add events
+
                 
             //- div(class='events')
 
@@ -24,13 +36,20 @@ html(lang="en")
     //- div(class='downAngle')
     //-     i(class="fas fa-angle-down")
 
-    div(class='addEventReminder')
+    //form to enter the events
+    div(class='addEventReminder wrapper' id='eventForm')
         form(action="/", method="post")
             label(for="name") Name :
-            input(name='name', type='text', placeholder='Name')
+            input(class='inptField',name='name', type='text', placeholder='Name')
             label(for="EventName") Event :
-            input(name="event", type='text', placeholder='Event Name')
+            input(class='inptField',name="event", type='text', placeholder='Event Name')
             label(for = "date") Date :
-            input(name='date', type='text', placeholder='yyyy-mm-dd')
-            button(type="submit")
+            input(class='inptField',name='date', type='text', placeholder='yyyy-mm-dd')
+            button(type="submit") submit
+        - var eventMsg = mesg;
+        if(eventMsg)
+            p= eventMsg
+
+
+    //- button(onclick='dada()') butt?on
     script(src="/scripts/home.js")
