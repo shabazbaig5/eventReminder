@@ -32,7 +32,14 @@ body{
     height: 90vh;
     
 }
-
+.centerPaper p{
+    background-color: #03030384;
+    text-align: center;
+    width : 50vh;
+    border-radius: 1.5rem;
+    padding: 20px;
+    box-shadow:5px 5px 10px  rgb(0, 0, 0);
+}
 
 /* 
 .centerPaper .content{
@@ -53,3 +60,9 @@ body{
     font-size: 40px;
     color: white;
 }
+
+/* 
+.downAngle {
+    text-align:center;
+    font-size: 30px;
+} */

@@ -10,16 +10,27 @@ html(lang="en")
     body
 
     div(class='eventHead')
-        h2 View events here
-        - const eventList = events
-        div(class='centerPaper wrapper')
-            //- div(class='content')
-            each val in eventList
-                p=`${val.name} : ${val.event_name}`
+        h1  Upcoming Events
+    - const eventList = events
+    div(class='centerPaper wrapper')
+        //- div(class='content')
+        each val in eventList
+            p=`${val.name} : ${val.event_name}`
                 
             //- div(class='events')
 
             //-     h2 Hey, there save the events here
             //-     i(class="fas fa-angle-down")
+    //- div(class='downAngle')
+    //-     i(class="fas fa-angle-down")
 
+    div(class='addEventReminder')
+        form(action="/", method="post")
+            label(for="name") Name :
+            input(name='name', type='text', placeholder='Name')
+            label(for="EventName") Event :
+            input(name="event", type='text', placeholder='Event Name')
+            label(for = "date") Date :
+            input(name='date', type='text', placeholder='yyyy-mm-dd')
+            button(type="submit")
     script(src="/scripts/home.js")
