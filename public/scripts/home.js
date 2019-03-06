@@ -1,6 +1,7 @@
 
 console.log('script loaded');
-
+var date = new Date();
+console.log(date.getDate());
 // deleteEvent = (e) => {
 //     console.log('clicked');
 //     console.log(e);

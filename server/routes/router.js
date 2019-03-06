@@ -16,7 +16,7 @@ module.exports = () => {
                 // console.log(err);
             }
             else{
-                // console.log(rows);
+                console.log(rows);
                 res.render('home', {
                     events : rows
                 });
@@ -40,6 +40,8 @@ module.exports = () => {
                 // res.render("home", {
                 //     mesg : "event added!"
                 // });
+                console.log(rows);
+                
                 res.redirect('/');
             }
         });
@@ -58,7 +60,7 @@ module.exports = () => {
             else{
                 res.send('success');
             }
-        })
+        });
     });
 
     router.get('/home',(req,res) => {

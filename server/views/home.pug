@@ -24,7 +24,7 @@ html(lang="en")
             p no events added yet!
         //- div(class='content')
         each val in eventList
-            p(class='eventList')=`${val.name} : ${val.event_name}`
+            p(class='eventList')=`${val.name} : ${val.event_name}; ${val.date}`
 
         a(id='scroller' href='#eventForm') add events
 

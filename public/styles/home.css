@@ -1,11 +1,16 @@
 /* body styling */
+html{
+    scroll-behavior: smooth;
+}
 body{
+    
     background-color: #17141d;
     color: white;
-    font-family: 'Bradley Hand', cursive
+    font-family: 'Bradley Hand', cursive;
     /* font-family: 'Courier New', Courier, monospace */
     /* font- */
     /* font-family:  */
+    
 }
 
 
